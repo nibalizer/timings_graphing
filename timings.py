@@ -20,6 +20,12 @@ class TimingsTracker():
     def handleEvent(self, event, replay):
         pass
 
+    def handleUnitTypeChangeEvent(self, event, replay):
+        if event.unit.name == "Lair":
+            print "Lair Created"
+            print event.frame, frame_to_time(event.frame)
+            lair_timings.append(event.frame)
+
     def handleUnitDoneEvent(self, event, replay):
         # print event.name
         # print event.unit
@@ -39,7 +45,6 @@ class TimingsTracker():
     def handleControlGroupEvent(self, event, replay):
         pass
 
-
     def handleTargetAbilityEvent(self, event, replay):
         pass
 
@@ -48,6 +53,7 @@ if __name__ == "__main__":
     debug = False
     command_center_timings = []
     spawning_pool_timings = []
+    lair_timings = []
 
     # find all replay files in 'replays' dir and add theem to an array
     replay_files = []
@@ -76,5 +82,6 @@ if __name__ == "__main__":
 
     print "CC timings", command_center_timings
     print "pool timings", spawning_pool_timings
+    print "lair timings", lair_timings
     if debug:
         print "Error replays found in: ", error_replays
