@@ -1,0 +1,13 @@
+This utility prints out timings of the first important buildings across
+many games.
+
+
+Important buildings:
+
+* nexus
+* hatch
+* cc
+* spawning pool
+* spire
+* gateway
+* baracks
